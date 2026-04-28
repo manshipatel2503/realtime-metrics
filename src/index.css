@@ -1,0 +1,294 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — Real-Time Dashboard
+   Light & Dark theme via CSS custom properties.
+   Tailwind v4 @theme inline maps these to utility classes.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   Light Theme (default)
+   ---------------------------------------------------------- */
+:root {
+  /* --- Backgrounds --- */
+  --bg-base:        #f0f4f8;   /* page canvas */
+  --bg-surface:     #ffffff;   /* cards, panels */
+  --bg-elevated:    #e8eef5;   /* hover states, nested surfaces */
+  --bg-overlay:     rgba(255, 255, 255, 0.8); /* modals / popovers */
+
+  /* --- Text --- */
+  --text-primary:   #0d1117;   /* headings, strong labels */
+  --text-secondary: #4a5568;   /* body, descriptions */
+  --text-muted:     #8896a8;   /* placeholders, captions */
+  --text-inverse:   #ffffff;   /* text on dark/accent bg */
+
+  /* --- Borders --- */
+  --border-subtle:  #dde3eb;   /* dividers, low-contrast */
+  --border-default: #c8d0db;   /* input borders, card outlines */
+  --border-strong:  #a0aab5;   /* focus rings, emphasis */
+
+  /* --- Brand / Accent (electric cyan-blue) --- */
+  --accent-50:      #ecfeff;
+  --accent-100:     #cffafe;
+  --accent-200:     #a5f3fc;
+  --accent-300:     #67e8f9;
+  --accent-400:     #22d3ee;
+  --accent-500:     #06b6d4;   /* primary accent */
+  --accent-600:     #0891b2;
+  --accent-700:     #0e7490;
+  --accent-800:     #155e75;
+  --accent-900:     #164e63;
+
+  /* --- Semantic: Success (green) --- */
+  --success-subtle: #dcfce7;
+  --success-muted:  #86efac;
+  --success:        #22c55e;
+  --success-strong: #16a34a;
+
+  /* --- Semantic: Warning (amber) --- */
+  --warning-subtle: #fef9c3;
+  --warning-muted:  #fde047;
+  --warning:        #eab308;
+  --warning-strong: #ca8a04;
+
+  /* --- Semantic: Danger (red) --- */
+  --danger-subtle:  #fee2e2;
+  --danger-muted:   #fca5a5;
+  --danger:         #ef4444;
+  --danger-strong:  #dc2626;
+
+  /* --- Semantic: Info (indigo) --- */
+  --info-subtle:    #e0e7ff;
+  --info-muted:     #a5b4fc;
+  --info:           #6366f1;
+  --info-strong:    #4f46e5;
+
+  /* --- Chart / Data Visualization palette --- */
+  --chart-1:        #06b6d4;   /* cyan   — primary series */
+  --chart-2:        #6366f1;   /* indigo — secondary series */
+  --chart-3:        #22c55e;   /* green  — positive delta */
+  --chart-4:        #f59e0b;   /* amber  — neutral/mid */
+  --chart-5:        #ef4444;   /* red    — alert series */
+  --chart-6:        #a855f7;   /* purple — extra series */
+
+  /* --- Live indicator --- */
+  --live-dot:       #22c55e;
+  --live-ring:      rgba(34, 197, 94, 0.3);
+
+  /* --- Shadows --- */
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:      0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg:      0 12px 32px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.05);
+
+  /* --- Typography --- */
+  --font-sans:  'Inter', system-ui, 'Segoe UI', sans-serif;
+  --font-mono:  'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  /* --- Radius --- */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-2xl: 24px;
+
+  /* --- Spacing scale (base 4px) --- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* --- Transitions --- */
+  --transition-fast:   150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow:   400ms ease;
+}
+
+/* ----------------------------------------------------------
+   Dark Theme  (.dark class on <html> or <body>)
+   ---------------------------------------------------------- */
+.dark {
+  /* --- Backgrounds --- */
+  --bg-base:        #0b0f18;   /* deepest dark */
+  --bg-surface:     #131929;   /* cards, panels */
+  --bg-elevated:    #1c2438;   /* hover / nested surfaces */
+  --bg-overlay:     rgba(19, 25, 41, 0.9);
+
+  /* --- Text --- */
+  --text-primary:   #e8edf5;
+  --text-secondary: #8fa3bf;
+  --text-muted:     #4e6077;
+  --text-inverse:   #0d1117;
+
+  /* --- Borders --- */
+  --border-subtle:  #1e2a3a;
+  --border-default: #243044;
+  --border-strong:  #334866;
+
+  /* --- Brand / Accent — slightly brighter for dark bg --- */
+  --accent-50:      #083344;
+  --accent-100:     #0c4a6e;
+  --accent-200:     #075985;
+  --accent-300:     #0369a1;
+  --accent-400:     #0ea5e9;
+  --accent-500:     #38bdf8;   /* primary accent on dark */
+  --accent-600:     #7dd3fc;
+  --accent-700:     #bae6fd;
+  --accent-800:     #e0f2fe;
+  --accent-900:     #f0f9ff;
+
+  /* --- Semantic: Success --- */
+  --success-subtle: #052e16;
+  --success-muted:  #166534;
+  --success:        #4ade80;
+  --success-strong: #86efac;
+
+  /* --- Semantic: Warning --- */
+  --warning-subtle: #422006;
+  --warning-muted:  #92400e;
+  --warning:        #fbbf24;
+  --warning-strong: #fde68a;
+
+  /* --- Semantic: Danger --- */
+  --danger-subtle:  #450a0a;
+  --danger-muted:   #991b1b;
+  --danger:         #f87171;
+  --danger-strong:  #fca5a5;
+
+  /* --- Semantic: Info --- */
+  --info-subtle:    #1e1b4b;
+  --info-muted:     #3730a3;
+  --info:           #818cf8;
+  --info-strong:    #a5b4fc;
+
+  /* --- Chart colors — more vivid on dark --- */
+  --chart-1:        #38bdf8;
+  --chart-2:        #818cf8;
+  --chart-3:        #4ade80;
+  --chart-4:        #fbbf24;
+  --chart-5:        #f87171;
+  --chart-6:        #c084fc;
+
+  /* --- Live indicator --- */
+  --live-dot:       #4ade80;
+  --live-ring:      rgba(74, 222, 128, 0.25);
+
+  /* --- Shadows (more diffuse on dark) --- */
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.3),  0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md:      0 4px 12px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.2);
+  --shadow-lg:      0 12px 32px rgba(0,0,0,0.5), 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* ----------------------------------------------------------
+   Tailwind v4 — @theme inline
+   Maps CSS vars → Tailwind utility classes
+   e.g. bg-surface, text-primary, border-subtle, etc.
+   ---------------------------------------------------------- */
+@theme inline {
+  /* Backgrounds */
+  --color-bg-base:      var(--bg-base);
+  --color-bg-surface:   var(--bg-surface);
+  --color-bg-elevated:  var(--bg-elevated);
+  --color-bg-overlay:   var(--bg-overlay);
+
+  /* Text */
+  --color-text-primary:   var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted:     var(--text-muted);
+  --color-text-inverse:   var(--text-inverse);
+
+  /* Borders */
+  --color-border-subtle:  var(--border-subtle);
+  --color-border-default: var(--border-default);
+  --color-border-strong:  var(--border-strong);
+
+  /* Accent */
+  --color-accent-50:  var(--accent-50);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
+
+  /* Semantic */
+  --color-success-subtle: var(--success-subtle);
+  --color-success-muted:  var(--success-muted);
+  --color-success:        var(--success);
+  --color-success-strong: var(--success-strong);
+
+  --color-warning-subtle: var(--warning-subtle);
+  --color-warning-muted:  var(--warning-muted);
+  --color-warning:        var(--warning);
+  --color-warning-strong: var(--warning-strong);
+
+  --color-danger-subtle: var(--danger-subtle);
+  --color-danger-muted:  var(--danger-muted);
+  --color-danger:        var(--danger);
+  --color-danger-strong: var(--danger-strong);
+
+  --color-info-subtle: var(--info-subtle);
+  --color-info-muted:  var(--info-muted);
+  --color-info:        var(--info);
+  --color-info-strong: var(--info-strong);
+
+  /* Chart */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+
+  /* Live */
+  --color-live-dot:  var(--live-dot);
+  --color-live-ring: var(--live-ring);
+
+  /* Typography */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* Radius */
+  --radius-sm:  var(--radius-sm);
+  --radius-md:  var(--radius-md);
+  --radius-lg:  var(--radius-lg);
+  --radius-xl:  var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+}
+
+/* ----------------------------------------------------------
+   Base resets
+   ---------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+#root {
+  min-height: 100svh;
+  width: 100%;
+}
