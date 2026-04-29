@@ -31,8 +31,8 @@ export function DashboardLayout() {
         onRetry={start}
       />
 
-      <div className="flex flex-col md:flex-row gap-4 flex-1">
-        <div className="flex flex-col gap-4 flex-1">
+      <main className="flex flex-col md:flex-row gap-4 flex-1" aria-label="Metrics dashboard">
+        <div className="flex flex-col gap-4 flex-1" aria-busy={isLoading} aria-live="polite">
           {isLoading ? (
             <>
               <ChartSkeleton />
@@ -48,13 +48,13 @@ export function DashboardLayout() {
           )}
         </div>
 
-        <div className="w-full md:w-80 lg:w-96 shrink-0">
+        <div className="w-full md:w-80 lg:w-96 shrink-0" aria-busy={isLoading} aria-live="polite">
           {isLoading
             ? <TableSkeleton />
             : <EventsTable data={recentEvents} />
           }
         </div>
-      </div>
+      </main>
     </div>
   );
 }
