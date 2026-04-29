@@ -32,6 +32,14 @@ A production-grade real-time metrics dashboard built with React, TypeScript, and
 
 ---
 
+## Quick Start
+
+```bash
+npm install && cd server && npm install && cd .. && npm run dev
+```
+
+---
+
 ## Setup
 
 ### Prerequisites
