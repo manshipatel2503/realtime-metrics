@@ -35,7 +35,8 @@ A production-grade real-time metrics dashboard built with React, TypeScript, and
 ## Quick Start
 
 ```bash
-npm run setup && npm run dev
+npm run setup   # installs root and server dependencies
+npm run dev     # starts both the SSE server (port 3001) and frontend (port 5173)
 ```
 
 ---
