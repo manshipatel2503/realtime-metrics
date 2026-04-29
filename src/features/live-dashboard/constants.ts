@@ -19,3 +19,15 @@ export const METRIC_UNITS: Record<MetricName, string> = {
   request_rate: 'req/s',
   error_rate:   '%',
 };
+
+export const CHART_TOOLTIP_STYLE = {
+  background:   'var(--bg-surface)',
+  border:       '1px solid var(--border-default)',
+  borderRadius: 'var(--radius-md)',
+  fontSize:     12,
+} as const;
+
+export const CHART_TOOLTIP_LABEL_STYLE = {
+  color:        'var(--text-secondary)',
+  marginBottom: 4,
+} as const;

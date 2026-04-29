@@ -6,6 +6,7 @@ import {
 import { Card } from '../../../shared/ui/Card';
 import { StatusDot } from '../../../shared/ui/StatusDot';
 import { formatTime, formatValue } from '../utils/formatters';
+import { CHART_TOOLTIP_STYLE, CHART_TOOLTIP_LABEL_STYLE } from '../constants';
 import type { DataPoint } from '../../../types';
 
 interface Props {
@@ -54,13 +55,8 @@ export function RequestErrorChart({ requestData, errorData }: Props) {
             />
 
             <Tooltip
-              contentStyle={{
-                background: 'var(--bg-surface)',
-                border: '1px solid var(--border-default)',
-                borderRadius: 'var(--radius-md)',
-                fontSize: 12,
-              }}
-              labelStyle={{ color: 'var(--text-secondary)', marginBottom: 4 }}
+              contentStyle={CHART_TOOLTIP_STYLE}
+              labelStyle={CHART_TOOLTIP_LABEL_STYLE}
               formatter={(value, name) => [
                 name === 'request_rate'
                   ? `${formatValue(Number(value))} req/s`

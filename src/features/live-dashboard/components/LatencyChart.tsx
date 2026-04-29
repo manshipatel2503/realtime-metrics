@@ -6,6 +6,7 @@ import {
 import { Card } from '../../../shared/ui/Card';
 import { StatusDot } from '../../../shared/ui/StatusDot';
 import { formatTime, formatValue } from '../utils/formatters';
+import { CHART_TOOLTIP_STYLE, CHART_TOOLTIP_LABEL_STYLE } from '../constants';
 import type { DataPoint } from '../../../types';
 
 interface Props {
@@ -27,6 +28,7 @@ export function LatencyChart({ data }: Props) {
   );
 
   const latest = data[data.length - 1]?.value ?? 0;
+  const latestLabel = getLatestValue(data);
   const valueColor =
     latest >= ALERT_THRESHOLD ? 'var(--danger)'
     : latest >= WARN_THRESHOLD ? 'var(--warning)'
@@ -39,9 +41,9 @@ export function LatencyChart({ data }: Props) {
         <span
           className="text-sm font-semibold font-mono tabular-nums"
           style={{ color: valueColor }}
-          aria-label={`Current latency: ${getLatestValue(data)}`}
+          aria-label={`Current latency: ${latestLabel}`}
         >
-          {getLatestValue(data)}
+          {latestLabel}
         </span>
       }
       className="h-full"
@@ -80,13 +82,8 @@ export function LatencyChart({ data }: Props) {
             />
 
             <Tooltip
-              contentStyle={{
-                background: 'var(--bg-surface)',
-                border: '1px solid var(--border-default)',
-                borderRadius: 'var(--radius-md)',
-                fontSize: 12,
-              }}
-              labelStyle={{ color: 'var(--text-secondary)', marginBottom: 4 }}
+              contentStyle={CHART_TOOLTIP_STYLE}
+              labelStyle={CHART_TOOLTIP_LABEL_STYLE}
               formatter={(value) => [`${formatValue(Number(value))} ms`, 'Latency']}
             />
 
