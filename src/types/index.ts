@@ -13,4 +13,4 @@ export type MetricName =
   | 'request_rate'
   | 'error_rate';
 
-export type ConnectionStatus = 'idle' | 'connecting' | 'connected' | 'error' | 'stopped';
+export type ConnectionStatus = 'connecting' | 'connected' | 'error' | 'stopped';

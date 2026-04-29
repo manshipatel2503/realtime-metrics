@@ -10,7 +10,7 @@ interface ConnectionBannerProps {
 }
 
 export function ConnectionBanner({ status, error, retryCount, onRetry }: ConnectionBannerProps) {
-  if (status === 'connected' || status === 'idle') return null;
+  if (status === 'connected') return null;
 
   if (status === 'stopped') {
     return (
