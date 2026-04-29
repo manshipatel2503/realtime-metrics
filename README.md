@@ -154,4 +154,4 @@ server/
 
 ## Time Spent
 
-~ 4 hours
+~ 7–8 hours
