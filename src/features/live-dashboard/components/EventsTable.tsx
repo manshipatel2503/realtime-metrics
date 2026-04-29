@@ -71,7 +71,7 @@ export function EventsTable({ data }: Props) {
           value={filter}
           onChange={e => setFilter(e.target.value as FilterValue)}
           className="
-            flex-1 rounded-[var(--radius-md)] border border-border-default
+            flex-1 rounded-md border border-border-default
             bg-bg-elevated px-2 py-1 text-xs text-text-primary
             focus:outline-none focus:ring-2 focus:ring-accent-500
           "

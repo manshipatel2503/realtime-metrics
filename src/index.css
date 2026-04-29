@@ -260,6 +260,11 @@
   --radius-lg:  var(--radius-lg);
   --radius-xl:  var(--radius-xl);
   --radius-2xl: var(--radius-2xl);
+
+  /* Shadows */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
 }
 
 /* ----------------------------------------------------------

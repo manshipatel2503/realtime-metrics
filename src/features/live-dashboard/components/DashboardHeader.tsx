@@ -15,7 +15,7 @@ export function DashboardHeader({ status, dataCount, onStart, onStop }: Dashboar
   return (
     <header className="flex items-center justify-between gap-4 border-b border-border-subtle pb-4 mb-2">
       <div className="flex items-center gap-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-md)] bg-accent-500 shadow-[var(--shadow-sm)]">
+        <div className="flex h-9 w-9 items-center justify-center rounded-md bg-accent-500 shadow-sm">
           <svg
             viewBox="0 0 24 24"
             className="h-5 w-5 text-text-inverse fill-none stroke-current"
@@ -58,7 +58,7 @@ export function DashboardHeader({ status, dataCount, onStart, onStop }: Dashboar
           onClick={isRunning ? onStop : onStart}
           aria-label={isRunning ? 'Stop data stream' : 'Start data stream'}
           className={cn(
-            'rounded-[var(--radius-md)] px-4 py-1.5 text-sm font-medium transition-opacity hover:opacity-80',
+            'rounded-md px-4 py-1.5 text-sm font-medium transition-opacity hover:opacity-80',
             isRunning
               ? 'bg-bg-elevated border border-border-default text-text-secondary'
               : 'bg-accent-500 text-text-inverse'

@@ -9,7 +9,7 @@ export function ErrorFallback({ error, onReset }: ErrorFallbackProps) {
       role="alert"
       className="
         min-h-[200px] flex flex-col items-center justify-center gap-4
-        rounded-[var(--radius-lg)] border border-danger-muted
+        rounded-lg border border-danger-muted
         bg-danger-subtle p-8 text-center
       "
     >
@@ -28,7 +28,7 @@ export function ErrorFallback({ error, onReset }: ErrorFallbackProps) {
 
       {import.meta.env.DEV && error.stack && (
         <pre className="
-          w-full max-w-md overflow-auto rounded-[var(--radius-md)]
+          w-full max-w-md overflow-auto rounded-md
           bg-bg-elevated border border-border-subtle
           px-4 py-3 text-left text-xs text-text-muted font-mono
         ">
@@ -39,10 +39,10 @@ export function ErrorFallback({ error, onReset }: ErrorFallbackProps) {
       <button
         onClick={onReset}
         className="
-          mt-2 rounded-[var(--radius-md)] bg-danger px-5 py-2
+          mt-2 rounded-md bg-danger px-5 py-2
           text-sm font-medium text-text-inverse
-          transition-opacity duration-[var(--transition-fast)]
-          hover:opacity-80 focus:outline-none focus:ring-2
+          transition-opacity hover:opacity-80
+          focus:outline-none focus:ring-2
           focus:ring-danger focus:ring-offset-2
         "
       >

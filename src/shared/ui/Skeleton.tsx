@@ -11,7 +11,7 @@ export function Skeleton({ className, style }: SkeletonProps) {
     <div
       style={style}
       className={cn(
-        'animate-pulse rounded-[var(--radius-md)]',
+        'animate-pulse rounded-md',
         'bg-bg-elevated',
         className
       )}

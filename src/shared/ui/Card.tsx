@@ -12,10 +12,10 @@ export function Card({ title, badge, children, className }: CardProps) {
   return (
     <div
       className={cn(
-        'flex flex-col gap-4 rounded-[var(--radius-lg)]',
+        'flex flex-col gap-4 rounded-lg',
         'bg-bg-surface border border-border-subtle',
         'p-4 md:p-5 h-full',
-        'shadow-[var(--shadow-md)]',
+        'shadow-md',
         className
       )}
     >

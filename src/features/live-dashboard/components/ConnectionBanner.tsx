@@ -14,7 +14,7 @@ export function ConnectionBanner({ status, error, retryCount, onRetry }: Connect
 
   if (status === 'stopped') {
     return (
-      <div role="status" className="flex items-center justify-between gap-3 rounded-[var(--radius-md)] bg-bg-elevated border border-border-default px-4 py-3 text-sm text-text-secondary mb-4">
+      <div role="status" className="flex items-center justify-between gap-3 rounded-md bg-bg-elevated border border-border-default px-4 py-3 text-sm text-text-secondary mb-4">
         <span>⏸ Stream paused.</span>
         <button
           onClick={onRetry}
@@ -28,7 +28,7 @@ export function ConnectionBanner({ status, error, retryCount, onRetry }: Connect
 
   if (status === 'connecting' && retryCount > 0) {
     return (
-      <div role="status" aria-live="polite" className="flex items-center gap-3 rounded-[var(--radius-md)] bg-warning-subtle border border-warning-muted px-4 py-3 text-sm text-text-primary mb-4">
+      <div role="status" aria-live="polite" className="flex items-center gap-3 rounded-md bg-warning-subtle border border-warning-muted px-4 py-3 text-sm text-text-primary mb-4">
         <span className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-warning border-t-transparent" />
         <span>
           Connection lost. Reconnecting…
@@ -42,14 +42,14 @@ export function ConnectionBanner({ status, error, retryCount, onRetry }: Connect
 
   if (status === 'error') {
     return (
-      <div role="alert" className="flex items-center justify-between gap-3 rounded-[var(--radius-md)] bg-danger-subtle border border-danger-muted px-4 py-3 text-sm text-text-primary mb-4">
+      <div role="alert" className="flex items-center justify-between gap-3 rounded-md bg-danger-subtle border border-danger-muted px-4 py-3 text-sm text-text-primary mb-4">
         <span>
           <span className="font-medium text-danger-strong">Connection failed. </span>
           {error?.message ?? 'Could not reach the data stream.'}
         </span>
         <button
           onClick={onRetry}
-          className="shrink-0 rounded-[var(--radius-md)] bg-danger px-3 py-1 text-xs font-medium text-text-inverse hover:opacity-80 transition-opacity"
+          className="shrink-0 rounded-md bg-danger px-3 py-1 text-xs font-medium text-text-inverse hover:opacity-80 transition-opacity"
         >
           Retry
         </button>
